@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Black Jack</title>
+    <style>
+        #table{
+            background-color: green;
+            border: 5px solid gray;
+            margin: 100px;
+            width: 900px;
+            height: 500px;
+            
+            
+        }
+        label{
+            margin-left: 100px;
+            display: flex;
+
+        }
+        div{
+            margin-left: 100px;
+        }
+        #deal-button{
+            margin-left: 40%;
+        }
+        #dealer-hand{
+            background-color: lightgreen;
+            width: 700px;
+            height: 100px;
+        
+        }
+        #player-hand{
+            background-color: lightgreen;
+            width: 700px;
+            height: 100px;
+        }
+        img{
+            margin: 10px;
+            width: 60px;
+            height: 80px;
+        }
+        #messages{
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="table">
+
+        <div id="messages"></div>
+        
+        <label>Dealer: </label>
+        
+        <label id="dealer-points" class="points"></label>
+        
+        <div id="dealer-hand" class="hand">
+            
+        </div>
+        
+        <label>Player: </label>
+        
+        <label id="player-points" class="points"></label>
+        
+        <div id="player-hand" class="hand">
+            
+        </div>
+        
+        <div class="buttons">
+        
+            <button id="deal-button">Deal</button>
+        
+            <button id="hit-button">Hit</button>
+        
+            <button id="stand-button">Stand</button>
+        
+        </div>
+        
+    </div>
+    
+    <script   src="http://code.jquery.com/jquery-3.3.1.min.js"   
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   
+    crossorigin="anonymous"></script>
+    
+    <script src="blackjack.js"></script>
+</body>
+</html>

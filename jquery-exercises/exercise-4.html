@@ -12,13 +12,17 @@
     */
     $(function () {
       // write your code here
+      var $log = $('#log');
+      
       $('#clear-button').click(function(){
-          $('#test-field').text('');
+        $('input:text').val('')
 
       });
       $('#save-button').click(function(){
-          var text = $('input').val();
-          var $message = $('<li>', {'text': text});
+          var $text = $('#text-field').val();
+          var $message = $('<li>');
+          $message.text($text);
+          $log.append($message);
       });
     });
     </script>

@@ -15,7 +15,39 @@
     */
 
     $(function(){
-        
+      var $description = $("#description");
+      var $addButton = $("#add-button");
+      var $clearButton = $("#clear-button");
+      var $todoList = $("#todo-list");
+      $addButton.click(function () {
+        $todoList.append("<li><input type=\"checkbox\"> " + $description.val() + "<span class=\"edit\"> (edit)</span><span class=\"delete\"> (x)</span></li>");
+        $description.val('');
+      });
+
+      $clearButton.click(function () {
+        $todoList.empty();
+      });
+
+      $todoList.on('click', '.delete', function (e) {
+        $(this).parent().remove();
+      });
+
+      $todoList.on('click', '.edit', function (e) {
+        var $text = $(this).parent().text();
+        $text = $text.replace(' (edit) (x)', '');
+        $description.val($text);
+        $(this).parent().remove();
+      });
+
+      $todoList.on('click', 'input', function (e) {
+        if ($(this).is(":checked")) {
+          $(this).parent().css('text-decoration', 'line-through');
+        }
+        else {
+          $(this).parent().css('text-decoration', 'initial');
+        }
+      });
+
     })
     </script>
     <style>
@@ -32,6 +64,7 @@
     <div id="wrapper">
       <input id="description" type="text" name="description">
       <button id="add-button">Add Task</button>
+      <button id="clear-button">Clear All</button>
       <ul id="todo-list">
         <li>Feed the cat</li>
       </ul>
